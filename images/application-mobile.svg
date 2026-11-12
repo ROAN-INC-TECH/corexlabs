@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420">
+<defs><linearGradient id="g"><stop stop-color="#06245e"/><stop offset="1" stop-color="#087bff"/></linearGradient></defs>
+<rect width="700" height="420" rx="25" fill="url(#g)"/>
+<rect x="270" y="35" width="160" height="330" rx="25" fill="white"/>
+<rect x="282" y="65" width="136" height="270" rx="12" fill="#092b64"/>
+<rect x="310" y="110" width="80" height="70" rx="12" fill="#087bff"/>
+<path d="M325 145l20 18 35-40" stroke="white" stroke-width="8" fill="none"/>
+<rect x="310" y="205" width="80" height="10" rx="5" fill="white"/>
+<rect x="310" y="230" width="60" height="10" rx="5" fill="#8dbfff"/>
+<rect x="310" y="260" width="80" height="35" rx="8" fill="#087bff"/>
+<text x="350" y="400" text-anchor="middle" fill="white" font-size="23" font-family="Arial" font-weight="bold">APPLICATIONS MOBILES</text>
+</svg>
