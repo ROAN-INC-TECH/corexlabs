@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>COREX LABS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --blue: #0755e9;
+            --dark: #071b49;
+            --light: #eef5ff
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: Poppins, Arial;
+            background: #f3f7ff;
+            color: var(--dark)
+        }
+
+        header {
+            background: white;
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px #0001
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .brand img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 50%
+        }
+
+        .brand h2 {
+            font-size: 19px;
+            line-height: 1.2
+        }
+
+        .brand small {
+            font-size: 10px;
+            color: var(--blue)
+        }
+
+        .back {
+            background: var(--blue);
+            color: white;
+            padding: 11px 17px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 13px
+        }
+
+        .banner {
+            background: linear-gradient(110deg, #06328c, #0873ff);
+            color: white;
+            padding: 35px 6%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 20px
+        }
+
+        .banner h1 {
+            font-size: clamp(27px, 4vw, 42px);
+            margin-bottom: 12px
+        }
+
+        .banner p {
+            line-height: 1.7;
+            font-size: 14px
+        }
+
+        .banner img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: 25px auto;
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: 35% 65%;
+            gap: 20px
+        }
+
+        .panel {
+            background: white;
+            border-radius: 15px;
+            padding: 22px;
+            box-shadow: 0 5px 20px #092b6410
+        }
+
+        .panel h2 {
+            font-size: 20px;
+            margin-bottom: 18px;
+            color: var(--dark)
+        }
+
+        .blue-title {
+            background: var(--blue);
+            color: white;
+            padding: 13px;
+            border-radius: 9px;
+            margin-bottom: 15px
+        }
+
+        .benefit {
+            display: flex;
+            gap: 12px;
+            margin: 18px 0;
+            align-items: center
+        }
+
+        .benefit i {
+            font-size: 23px;
+            color: var(--blue);
+            width: 32px
+        }
+
+        .benefit strong {
+            display: block;
+            font-size: 13px
+        }
+
+        .benefit span {
+            font-size: 11px;
+            color: #64748b
+        }
+
+        .logo-box {
+            margin-top: 25px;
+            background: linear-gradient(130deg, #061e56, #0755e9);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px
+        }
+
+        .logo-box img {
+            width: 115px;
+            height: 115px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: white
+        }
+
+        .logo-box h3 {
+            margin-top: 10px;
+            font-size: 16px
+        }
+
+        .logo-box p {
+            font-size: 11px;
+            margin-top: 5px
+        }
+
+        .form-heading {
+            background: linear-gradient(100deg, #06328c, #0868f5);
+            color: white;
+            padding: 17px;
+            border-radius: 10px;
+            margin-bottom: 20px
+        }
+
+        .form-heading h2 {
+            color: white;
+            margin: 0
+        }
+
+        .form-heading p {
+            font-size: 12px
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px
+        }
+
+        .full {
+            grid-column: 1/-1
+        }
+
+        label {
+            font-size: 12px;
+            font-weight: 700
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd9ed;
+            border-radius: 8px;
+            font: 13px Poppins;
+            background: white;
+            outline: none
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--blue)
+        }
+
+        textarea {
+            min-height: 105px;
+            resize: vertical
+        }
+
+        button {
+            border: 0;
+            cursor: pointer;
+            font-family: inherit
+        }
+
+        .submit {
+            grid-column: 1/-1;
+            background: linear-gradient(100deg, #0648db, #0878ff);
+            color: white;
+            padding: 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .submit:hover {
+            opacity: .9
+        }
+
+        .notice {
+            grid-column: 1/-1;
+            background: #e7f2ff;
+            padding: 13px;
+            border-radius: 8px;
+            font-size: 11px;
+            line-height: 1.6
+        }
+
+        .required {
+            color: #e11d48
+        }
+
+        footer {
+            text-align: center;
+            background: #062d80;
+            color: white;
+            padding: 22px 10px;
+            font-size: 12px;
+            line-height: 2
+        }
+
+        footer a {
+            color: #b9dcff
+        }
+
+        @media(max-width:750px) {
+            .banner {
+                grid-template-columns: 1fr;
+                padding: 28px 6%
+            }
+
+            .banner img {
+                height: 180px
+            }
+
+            .container {
+                grid-template-columns: 1fr
+            }
+
+            .brand h2 {
+                font-size: 15px
+            }
+
+            .brand img {
+                width: 48px;
+                height: 48px
+            }
+
+            form {
+                grid-template-columns: 1fr
+            }
+
+            .full,
+            .submit,
+            .notice {
+                grid-column: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="brand" style="text-decoration:none;color:inherit">
+            <img src="images/logo.png" alt="AMATRIX">
+            <div>
+                <h2>COREX LABS</h2><small>Innovation Sans Limite</small>
+            </div>
+        </a>
+        <a href="index.html" class="back"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+    </header>
+
+    <section class="banner">
+        <div>
+            <h1>Commander un service</h1>
+            <p>Remplissez le formulaire pour nous présenter votre projet. Donnez-nous tous les détails nécessaires afin
+                que notre équipe puisse comprendre vos besoins et vous répondre rapidement.</p>
+        </div>
+        <img src="images/team.jpg" alt="AMATRIX DEVELOPERS COMMUNITY" onerror="this.style.display='none'">
+    </section>
+
+    <main class="container">
+
+        <aside class="panel">
+            <div class="blue-title">
+                <h2 style="color:white;margin:0">Pourquoi choisir COREX LABS ?</h2>
+            </div>
+
+            <div class="benefit"><i class="fas fa-rocket"></i>
+                <div><strong>Innovation constante</strong><span>Des solutions numériques modernes.</span></div>
+            </div>
+            <div class="benefit"><i class="fas fa-users"></i>
+                <div><strong>Une équipe qualifiée</strong><span>Des talents à votre service.</span></div>
+            </div>
+            <div class="benefit"><i class="fas fa-headset"></i>
+                <div><strong>Un support réactif</strong><span>Nous étudions votre demande.</span></div>
+            </div>
+            <div class="benefit"><i class="fas fa-shield-halved"></i>
+                <div><strong>Accompagnement</strong><span>Votre projet mérite notre attention.</span></div>
+            </div>
+
+            <div class="logo-box">
+                <img src="images/logo.png" alt="Logo AMATRIX">
+                <h3>COREX LABS</h3>
+                <p>CRÉER • DEVELOPPER • INNOVER</p>
+            </div>
+        </aside>
+
+        <section class="panel">
+            <div class="form-heading">
+                <h2><i class="fas fa-clipboard-list"></i> Formulaire de commande</h2>
+                <p>Remplissez les informations suivantes avec précision.</p>
+            </div>
+
+            <form id="clientForm">
+
+                <div class="field">
+                    <label>Nom complet <span class="required">*</span></label>
+                    <input name="nom" placeholder="Votre nom complet" required>
+                </div>
+
+                <div class="field">
+                    <label>Pays <span class="required">*</span></label>
+                    <input name="pays" placeholder="Votre pays" required>
+                </div>
+
+                <div class="field">
+                    <label>Ville</label>
+                    <input name="ville" placeholder="Votre ville">
+                </div>
+
+                <div class="field">
+                    <label>Numéro WhatsApp <span class="required">*</span></label>
+                    <input name="telephone" type="tel" placeholder="+237..." required>
+                </div>
+
+                <div class="field">
+                    <label>Adresse Gmail / E-mail <span class="required">*</span></label>
+                    <input name="email" type="email" placeholder="exemple@gmail.com" required>
+                </div>
+
+                <div class="field">
+                    <label>Vous êtes ?</label>
+                    <select name="client">
+                        <option>Particulier</option>
+                        <option>Entrepreneur</option>
+                        <option>Entreprise</option>
+                        <option>Association</option>
+                        <option>Établissement scolaire</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <label>Service souhaité <span class="required">*</span></label>
+                    <select name="service" id="service" required>
+                        <option value="">Sélectionnez un service</option>
+                        <option>Création de sites web</option>
+                        <option>Sites e-commerce</option>
+                        <option>Applications mobiles</option>
+                        <option>Intelligence artificielle</option>
+                        <option>Plateformes professionnelles</option>
+                        <option>Design graphique</option>
+                        <option>Maintenance informatique</option>
+                        <option>Sites web d'entreprise</option>
+                        <option>Sites éducatifs</option>
+
+                        <option>Sites de restauration</option>
+                        <option>Sites hospitaliers</option>
+                        <option>Autres projets numériques</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Type de projet <span class="required">*</span></label>
+                    <select name="type" required>
+                        <option value="">Choisir un type</option>
+                        <option>Projet personnel</option>
+                        <option>Projet commercial</option>
+                        <option>Projet professionnel</option>
+                        <option>Projet éducatif</option>
+                        <option>Projet institutionnel</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Nom de votre entreprise ou projet</label>
+                    <input name="entreprise" placeholder="Nom de votre projet">
+                </div>
+
+                <div class="field">
+                    <label>Budget estimé</label>
+                    <select name="budget">
+                        <option>Je souhaite discuter du budget</option>
+                        <option>Moins de 50 USD</option>
+                        <option>50 à 100 USD</option>
+                        <option>100 à 300 USD</option>
+                        <option>300 à 500 USD</option>
+                        <option>500 à 1000 USD</option>
+                        <option>Plus de 1000 USD</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Mode de collaboration souhaité</label>
+                    <select name="collaboration">
+                        <option>À distance</option>
+                        <option>En présentiel</option>
+                        <option>Les deux sont possibles</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <label>Décrivez votre projet en détail <span class="required">*</span></label>
+                    <textarea name="description"
+                        placeholder="Expliquez votre idée, les fonctionnalités souhaitées, le public concerné et le résultat attendu..."
+                        required></textarea>
+                </div>
+
+                <div class="field full">
+                    <label>Fonctionnalités souhaitées</label>
+                    <textarea name="fonctionnalites"
+                        placeholder="Exemple : inscription, connexion, espace client, paiement, administration, notifications..."></textarea>
+                </div>
+
+                <div class="field">
+                    <label>Avez-vous déjà un logo ?</label>
+                    <select name="logo">
+                        <option>Oui</option>
+                        <option>Non</option>
+                        <option>Je souhaite en créer un</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Avez-vous déjà un nom de domaine ?</label>
+                    <select name="domaine">
+                        <option>Oui</option>
+                        <option>Non</option>
+                        <option>Je souhaite être conseillé</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Délai souhaité</label>
+                    <select name="delai">
+                        <option>À discuter</option>
+                        <option>Urgent</option>
+                        <option>Dans une semaine</option>
+                        <option>Dans deux semaines</option>
+                        <option>Dans un mois</option>
+                        <option>Plus d'un mois</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Comment avez-vous connu COREX LABS ?</label>
+                    <select name="origine">
+                        <option>WhatsApp</option>
+                        <option>Facebook</option>
+                        <option>Recommandation</option>
+                        <option>Internet</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <label>Informations complémentaires</label>
+                    <textarea name="complement"
+                        placeholder="Ajoutez toute autre information utile à votre commande..."></textarea>
+                </div>
+
+                <div class="field full">
+                    <label style="display:flex;gap:9px;align-items:center;font-weight:500">
+                        <input type="checkbox" name="accord" required style="width:auto">
+                        J'accepte que COREX LABS utilise ces informations pour traiter ma demande.
+                    </label>
+                </div>
+
+                <button type="submit" class="submit">
+                    <i class="fab fa-whatsapp"></i> Envoyer ma commande sur WhatsApp
+                </button>
+
+                <div class="notice">
+                    <i class="fas fa-circle-info"></i>
+                    Après avoir cliqué, WhatsApp s'ouvrira avec les détails de votre commande. Vérifiez le message et
+                    appuyez sur « Envoyer » pour transmettre votre demande à COREX LABS.
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <strong>COREX LABS</strong><br>
+        <a href="mailto:support@corexlabs.com">support@corexlabs.com</a> |
+        <a href="https://wa.me/237656274406">+237656274406</a><br>
+        Ensemble, construisons votre avenir numérique.<br>
+        © 2026 COREX LABS. Tous droits réservés.
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(location.search);
+        const selected = params.get("service");
+        const service = document.getElementById("service");
+
+        if (selected) {
+            const option = [...service.options].find(o => o.text.toLowerCase() === selected.toLowerCase());
+            if (option) service.value = option.value;
+        }
+
+        document.getElementById("clientForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const data = new FormData(this);
+            const labels = {
+                nom: "Nom complet", pays: "Pays", ville: "Ville", telephone: "WhatsApp",
+                email: "E-mail", client: "Profil du client", service: "Service souhaité",
+                type: "Type de projet", entreprise: "Nom du projet", budget: "Budget",
+                collaboration: "Collaboration", description: "Description du projet",
+                fonctionnalites: "Fonctionnalités souhaitées", logo: "Logo",
+                domaine: "Nom de domaine", delai: "Délai", origine: "Comment avez-vous connu AMATRIX",
+                complement: "Informations complémentaires"
+            };
+
+            let message = "NOUVELLE COMMANDE — AMATRIX DIGITAL SERVICES\n\n";
+            for (const [key, label] of Object.entries(labels)) {
+                const value = data.get(key);
+                if (value && String(value).trim()) message += label + " : " + value + "\n";
+            }
+            message += "\nMerci de me contacter pour discuter de mon projet.";
+
+            const url = "https://wa.me/237656274406?text=" + encodeURIComponent(message);
+            window.location.href = url;
+        });
+    </script>
+</body>
+
+</html>

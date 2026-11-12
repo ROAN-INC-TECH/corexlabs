@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>COREX LABS</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Poppins, Arial, sans-serif;
+            background: #f3f7ff;
+            color: #10264c;
+        }
+
+        header {
+            background: white;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px #0001;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0755e9;
+            text-decoration: none;
+        }
+
+        .back {
+            background: #0755e9;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+            padding: 65px 7%;
+            background:
+                linear-gradient(90deg, #041b48ed, #0755e988),
+                url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=85');
+
+            background-position: center;
+            background-size: cover;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 65px);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #e1edff;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #ffffff20;
+            border: 1px solid #ffffff60;
+            padding: 9px 17px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 55px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title small {
+            color: #0755e9;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin-top: 10px;
+        }
+
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px #092b6410;
+            margin-bottom: 25px;
+        }
+
+        .about-box h2 {
+            color: #0755e9;
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+
+        .about-box p {
+            font-size: 14px;
+            line-height: 2;
+            color: #52627c;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .value {
+            background: white;
+            padding: 25px 18px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px #092b6410;
+            border-bottom: 4px solid #0755e9;
+        }
+
+        .value i {
+            font-size: 28px;
+            color: #0755e9;
+            margin-bottom: 15px;
+        }
+
+        .value h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .value p {
+            font-size: 12px;
+            line-height: 1.8;
+            color: #64748b;
+        }
+
+        .vision {
+            background: linear-gradient(120deg, #05265f, #0875ff);
+            color: white;
+            padding: 40px 25px;
+            border-radius: 18px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .vision h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .vision p {
+            font-size: 14px;
+            line-height: 2;
+            color: #e0ecff;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        footer {
+            background: #061b45;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        @media(max-width:700px) {
+            .values {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">COREX LABS</a>
+        <a href="index.html" class="back">
+            <i class="fas fa-arrow-left"></i> Accueil
+        </a>
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                <i class="fas fa-building"></i> NOTRE IDENTITÉ
+            </span>
+
+            <h1>À propos de COREX LABS</h1>
+
+            <p>
+                Une vision, une ambition et une passion pour la technologie.
+                COREX LABS est un espace de création, d'apprentissage et
+                d'innovation qui accompagne les personnes, les entreprises
+                et les organisations vers l'avenir numérique.
+            </p>
+
+        </div>
+
+    </section>
+
+    <main class="container">
+
+        <div class="section-title">
+            <small>QUI SOMMES-NOUS ?</small>
+            <h2>Comprendre COREX LABS</h2>
+        </div>
+
+        <section class="about-box">
+
+            <h2><i class="fas fa-cubes"></i> Qu'est-ce qu'COREX LABS ?</h2>
+
+            <p>
+                AMATRIX, également présenté comme A COREX LABS, représente
+                une vision ambitieuse de la technologie et du développement
+                numérique. C'est une initiative qui rassemble la créativité,
+                les connaissances, les compétences et les talents pour
+                transformer les idées en solutions concrètes.
+            </p>
+
+            <p>
+                COREX LABS ne se limite pas à la création de sites web ou
+                d'applications. Son objectif est de construire un environnement
+                où chacun peut apprendre, maîtriser les outils numériques,
+                rechercher de nouvelles possibilités et participer à
+                l'évolution technologique.
+            </p>
+
+        </section>
+
+        <section class="about-box">
+
+            <h2><i class="fas fa-lightbulb"></i> Comment COREX LABS a commencé</h2>
+
+            <p>
+                COREX LABS est né d'une ambition : démontrer que la technologie
+                ne doit pas être réservée à une minorité de personnes.
+                Derrière chaque grande réalisation se trouve une idée,
+                une volonté d'apprendre et le courage de commencer.
+            </p>
+
+            <p>
+                C'est cette conviction qui a poussé à construire COREX LABS :
+                créer un espace dans lequel les débutants peuvent développer
+                leurs compétences, les développeurs peuvent partager leurs
+                connaissances et les porteurs de projets peuvent trouver
+                des solutions numériques adaptées à leurs besoins.
+            </p>
+
+        </section>
+
+        <div class="section-title">
+            <small>NOS PRINCIPES</small>
+            <h2>Les valeurs fondamentales d'COREX LABS</h2>
+        </div>
+
+        <section class="values">
+
+            <div class="value">
+                <i class="fas fa-bullseye"></i>
+                <h3>Ambition</h3>
+                <p>Voir grand, fixer des objectifs élevés et travailler pour construire un avenir numérique meilleur.
+                </p>
+            </div>
+
+            <div class="value">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Apprentissage</h3>
+                <p>Partager les connaissances, former les débutants et encourager le développement des compétences.</p>
+            </div>
+
+            <div class="value">
+                <i class="fas fa-code"></i>
+                <h3>Maîtrise</h3>
+                <p>Développer des compétences solides et rechercher la qualité dans chaque réalisation.</p>
+            </div>
+
+            <div class="value">
+                <i class="fas fa-microchip"></i>
+                <h3>Technologie</h3>
+                <p>Explorer les outils numériques et utiliser la technologie pour résoudre des problèmes.</p>
+            </div>
+
+            <div class="value">
+                <i class="fas fa-magnifying-glass"></i>
+                <h3>Recherche</h3>
+                <p>Apprendre, expérimenter et découvrir continuellement de nouvelles possibilités.</p>
+            </div>
+
+            <div class="value">
+                <i class="fas fa-rocket"></i>
+                <h3>Innovation et excellence</h3>
+                <p>Créer des solutions originales, progresser et viser l'excellence dans chaque projet.</p>
+            </div>
+
+        </section>
+
+        <section class="vision">
+
+            <h2>Notre vision pour l'avenir</h2>
+
+            <p>
+                Faire d'COREX LABS un environnement technologique reconnu,
+                capable de former de nouveaux talents, de développer des
+                solutions numériques modernes, d'accompagner les entreprises
+                et de connecter les compétences au-delà des frontières.
+                Notre ambition est de transformer les idées en réalisations
+                et les connaissances en opportunités.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <strong>COREX LABS</strong><br>
+        CRÉER • DEVELOPPER • INNOVER<br>
+        Ensemble, construisons l'avenir numérique.<br>
+        © 2026 COREX LABS. Tous droits réservés.
+    </footer>
+
+</body>
+
+</html>

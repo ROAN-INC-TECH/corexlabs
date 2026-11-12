@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COREX LABS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --blue: #0755e9;
+      --dark: #071b49;
+      --light: #eef5ff;
+      --white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: Poppins, Arial, sans-serif;
+      background: #fff;
+      color: var(--dark);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer
+    }
+
+    /* HEADER */
+    header {
+      height: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 4%;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 18px #092b6410;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand img {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .brand-text {
+      border-left: 2px solid var(--dark);
+      padding-left: 15px;
+    }
+
+    .brand-text h1 {
+      font-size: 25px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .brand-text p {
+      font-size: 11px;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--blue)
+    }
+
+    .nav-btn,
+    .primary {
+      background: var(--blue);
+      color: white;
+      padding: 13px 22px;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px #0755e933;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 25px;
+      color: var(--dark);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 360px;
+      display: grid;
+      grid-template-columns: 48% 52%;
+      align-items: center;
+      background: linear-gradient(110deg, #f5f9ff, #e3efff);
+      overflow: hidden;
+    }
+
+    .hero-content {
+      padding: 45px 8%
+    }
+
+    .hero h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .hero h2 span {
+      color: var(--blue)
+    }
+
+    .hero p {
+      font-size: 15px;
+      margin: 20px 0 25px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .outline {
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      padding: 11px 20px;
+      border-radius: 30px;
+      background: white;
+      font-weight: 600;
+    }
+
+    .hero-image {
+      height: 360px;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-image:before {
+      content: "";
+      position: absolute;
+      left: -40px;
+      top: 0;
+      width: 90px;
+      height: 100%;
+      background: var(--blue);
+      transform: skew(-18deg);
+      opacity: .85;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 30px 3% 20px
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      font-weight: 800;
+    }
+
+    .section-title h2 span {
+      color: var(--blue)
+    }
+
+    .section-title p {
+      font-size: 14px
+    }
+
+    .title-line {
+      width: 120px;
+      height: 3px;
+      background: var(--blue);
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 20px 9px;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px #0755e925;
+      border: 1px solid #e4edff;
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px #0755e940;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 105px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-info {
+      padding: 9px;
+      position: relative;
+      min-height: 65px;
+    }
+
+    .service-info h3 {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .service-info p {
+      font-size: 11px;
+      margin-top: 3px;
+      padding-right: 25px;
+    }
+
+    .arrow {
+      position: absolute;
+      right: 9px;
+      bottom: 12px;
+      width: 25px;
+      height: 25px;
+      background: var(--blue);
+      color: white;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 47% 53%;
+      align-items: center;
+      background: #f2f7ff;
+      margin-top: 15px;
+    }
+
+    .about-image {
+      height: 310px;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      padding: 30px 7%
+    }
+
+    .about-content h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .about-content h2 span {
+      color: var(--blue)
+    }
+
+    .about-content p {
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .about-bottom {
+      display: grid;
+      grid-template-columns: 1fr 190px;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .qualities {
+      border-left: 3px solid var(--blue);
+      padding-left: 15px;
+    }
+
+    .quality {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 13px 0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .quality i {
+      color: var(--blue);
+      font-size: 23px;
+    }
+
+    /* CTA */
+    .cta {
+      margin: 35px 4%;
+      padding: 35px;
+      border-radius: 18px;
+      background: linear-gradient(120deg, #06348e, #0868f5);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 26px
+    }
+
+    .cta p {
+      margin: 10px 0 20px;
+      font-size: 14px
+    }
+
+    .cta a {
+      display: inline-block;
+      background: white;
+      color: var(--blue);
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #062d80;
+      color: white;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 25px 4%;
+    }
+
+    .footer-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .footer-item i {
+      font-size: 23px
+    }
+
+    .footer-slogan {
+      font-style: italic;
+      font-size: 17px;
+    }
+
+    .social {
+      display: flex;
+      gap: 17px;
+      font-size: 22px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 15px;
+      background: #0345c5;
+      font-size: 12px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      nav {
+        gap: 12px;
+        font-size: 11px
+      }
+
+      .brand-text h1 {
+        font-size: 19px
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .about-bottom {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:650px) {
+      header {
+        height: 75px;
+        padding: 8px 4%
+      }
+
+      .brand img {
+        width: 55px;
+        height: 55px
+      }
+
+      .brand-text h1 {
+        font-size: 16px
+      }
+
+      .brand-text p {
+        font-size: 8px
+      }
+
+      .menu-toggle {
+        display: block
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: 0 10px 15px #0002;
+      }
+
+      nav.active {
+        display: flex
+      }
+
+      nav a {
+        padding: 10px;
+        font-size: 14px
+      }
+
+      .hero {
+        grid-template-columns: 1fr
+      }
+
+      .hero-content {
+        padding: 35px 6%
+      }
+
+      .hero h2 {
+        font-size: 32px
+      }
+
+      .hero p {
+        font-size: 13px
+      }
+
+      .hero-image {
+        height: 260px
+      }
+
+      .hero-image:before {
+        display: none
+      }
+
+      .section {
+        padding: 25px 3%
+      }
+
+      .section-title h2 {
+        font-size: 26px
+      }
+
+      .title-line {
+        width: 40px;
+        margin: 0 5px 7px
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px
+      }
+
+      .service-card img {
+        height: 105px
+      }
+
+      .service-info h3 {
+        font-size: 11px
+      }
+
+      .service-info p {
+        font-size: 10px
+      }
+
+      .about {
+        grid-template-columns: 1fr
+      }
+
+      .about-image {
+        height: 240px
+      }
+
+      .about-content {
+        padding: 25px 6%
+      }
+
+      .about-content h2 {
+        font-size: 25px
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 7%
+      }
+
+      .footer-slogan {
+        font-size: 14px
+      }
+
+      .cta {
+        padding: 25px 15px
+      }
+
+      .cta h2 {
+        font-size: 21px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#accueil" class="brand">
+      <img src="images/logo.png" alt="AMATRIX">
+      <div class="brand-text">
+        <h1>COREX<br>LABS</h1>
+        <p>Innovation Sans Limite.</p>
+      </div>
+    </a>
+
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav>
+      <a href="#accueil"><i class="fas fa-house"></i> Accueil</a>
+      <a href="#services"><i class="fas fa-grip"></i> Services</a>
+      <a href="apropos.html"><i class="fas fa-circle-info"></i> À propos</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      <a class="nav-btn"
+        href="https://wa.me/237656274406?text=Bonjour%20COREX%2C%20je%20voudrais%20commander%20un%20service">
+        <i class="fas fa-paper-plane"></i> Commander un service
+      </a>
+    </nav>
+
+
+  </header>
+
+  <!-- ACCUEIL -->
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <h2>Transformons vos idées en <span>solutions numériques.</span></h2>
+      <p>
+        <b>COREX LABS</b> vous accompagne dans la création
+        de sites web, d'applications et bien plus encore.
+      </p>
+      <div class="hero-buttons">
+        <a href="#services" class="primary">
+          <i class="fas fa-rocket"></i> Découvrir nos services →
+        </a>
+        <a href="https://wa.me/237656274406" class="outline">
+          <i class="fab fa-whatsapp"></i> Contacter COREX LABS
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1100&q=85"
+        alt="Professionnelle COREX LABS">
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="section-title">
+      <span class="title-line"></span>
+      <h2 style="display:inline-block">Nos <span>Services</span></h2>
+      <span class="title-line"></span>
+      <p>Des solutions numériques adaptées à vos besoins.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <a class="service-card" href="https://wa.me/237656274406?text=Je%20veux%20un%20site%20web">
+        <img src="images/creation-sites-web.jpg">
+        <div class="service-info">
+          <h3>Création de sites web</h3>
+          <p>Sites vitrines et professionnels</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="https://wa.me/237656274406?text=Je%20veux%20un%20site%20e-commerce">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80">
+        <div class="service-info">
+          <h3>E-commerce</h3>
+          <p>Boutiques en ligne</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="https://wa.me/237656274406?text=Je%20veux%20une%20application">
+        <img src="images/applications-mobiles.jpg">
+        <div class="service-info">
+          <h3>Applications mobiles</h3>
+          <p>Apps web et mobiles</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="https://wa.me/237656274406?text=Je%20veux%20un%20projet%20IA">
+        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80">
+        <div class="service-info">
+          <h3>Intelligence artificielle</h3>
+          <p>Assistants intelligents</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="https://wa.me/237656274406?text=Je%20veux%20une%20plateforme">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80">
+        <div class="service-info">
+          <h3>Plateformes professionnelles</h3>
+          <p>Gestion et administration</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="https://wa.me/237656274406?text=Je%20veux%20un%20design%20graphique">
+        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=600&q=80">
+        <div class="service-info">
+          <h3>Design graphique</h3>
+          <p>Logos et visuels</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="https://wa.me/237656274406?text=Je%20veux%20une%20maintenance">
+        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=600&q=80">
+        <div class="service-info">
+          <h3>Maintenance informatique</h3>
+          <p>Correction et assistance</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="https://wa.me/237656274406?text=Je%20veux%20un%20site%20entreprise">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80">
+        <div class="service-info">
+          <h3>Sites d'entreprise</h3>
+          <p>Présence numérique</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="https://wa.me/237656274406?text=Je%20veux%20un%20site%20educatif">
+        <img src="images/sites-educatifs.jpg">
+        <div class="service-info">
+          <h3>Sites éducatifs</h3>
+          <p>E-learning et formation</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="https://wa.me/237656274406?text=J'ai%20un%20autre%20projet">
+        <img src="https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=900">
+        <div class="service-info">
+          <h3>Autres projets</h3>
+          <p>Parlez-nous de votre idée</p><span class="arrow">➜</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- A PROPOS -->
+  <section class="about" id="apropos">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=85"
+        alt="Équipe informatique">
+    </div>
+
+    <div class="about-content">
+      <h2>À propos de <span>COREX LABS</span></h2>
+      <p>
+        <B>COREX LABS</B> est une structure spécialisée
+        dans la conception et le développement de solutions numériques.
+      </p>
+      <p>
+        Notre objectif est d'accompagner les particuliers,
+        entrepreneurs et entreprises dans la réalisation de leurs projets technologiques.
+      </p>
+
+      <div class="about-bottom">
+        <a href="https://wa.me/237656274406" class="primary">En savoir plus →</a>
+        <div class="qualities">
+          <div class="quality"><i class="fas fa-rocket"></i> Innovation constante</div>
+          <div class="quality"><i class="fas fa-users"></i> Une équipe experte</div>
+          <div class="quality"><i class="fas fa-headset"></i> Un support réactif</div>
+          <div class="quality"><i class="fas fa-shield-halved"></i> Votre satisfaction, notre priorité</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMANDE -->
+  <section class="cta">
+    <h2>Vous avez un projet numérique ?</h2>
+    <p>Confiez votre vision à COREX LABS.</p>
+    <a href="https://wa.me/237656274406?text=Bonjour%20COREX%2C%20je%20souhaite%20commander%20un%20service.">
+      <i class="fab fa-whatsapp"></i> Commander maintenant
+    </a>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contact">
+    <div class="footer-top">
+      <div class="footer-item">
+        <i class="fas fa-envelope"></i>
+        <span>support@corexlabs.com</span>
+      </div>
+      <div class="footer-item">
+        <i class="fab fa-whatsapp"></i>
+        <span>+237 6 56 27 44 06</span>
+      </div>
+      <div class="footer-slogan">
+        Ensemble, construisons votre avenir numérique.
+      </div>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fas fa-globe"></i></a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 COREX LABS. Tous droits réservés.
+    </div>
+  </footer>
+
+
+  <script>
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('click', function (e) {
+        e.preventDefault();
+        const name = this.querySelector('h3')?.textContent.trim() || 'Autres projets numériques';
+        location.href = 'commande.html?service=' + encodeURIComponent(name);
+      });
+    });
+
+    document.querySelectorAll('a').forEach(link => {
+      const text = link.textContent.toLowerCase();
+      if (text.includes('commander')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          location.href = 'commande.html';
+        });
+      }
+    });
+  </script>
+
+
+
+
+
+  \n
+
+
+
+  <script id="amatrix-about-navigation">
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a,button").forEach(function (el) {
+        const t = (el.innerText || el.textContent || "")
+          .trim().toLowerCase();
+
+        if (t.includes("en savoir plus")) {
+          if (el.tagName.toLowerCase() === "a") {
+            el.href = "apropos.html";
+          } else {
+            el.addEventListener("click", function () {
+              location.href = "apropos.html";
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
